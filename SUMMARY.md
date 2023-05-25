@@ -1,9 +1,7 @@
 # Table of contents
 
+* [Initialization](README.md)
+
 ## Recon
 
-* [Subdomain Enum](README.md)
-
-***
-
-* [readme test](readme.md)
+* [Subdomain Enum](recon/readme.md)
