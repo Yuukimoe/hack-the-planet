@@ -1,5 +1,7 @@
 # Subdomain Enum
 
+
+
 * DNS
 * Passive sources
 * Active DNS resolution
@@ -60,7 +62,17 @@ python3 ctfr.py -d bilibili.com | unfurl -u domains
 * [https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts](https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts)
 
 ```bash
+# https://github.com/vortexau/dnsvalidator
+
+# 大多数 DNS 解析器的根基, 但容易出现误报
+# https://github.com/blechschmidt/massdns
+
+# https://github.com/d3mondev/puredns
+# https://github.com/projectdiscovery/shuffledns
+
 ```
+
+
 
 References
 
