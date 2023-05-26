@@ -38,36 +38,42 @@ amass enum -d target.com -config ~/.config/amass/config.ini
 assetfinder -subs-only target.com
 
 # https://github.com/Findomain/Findomain/
+# 快速的生成大量子域列表, 同时包括屏幕截图、端口扫描、HTTP 检查等功能
 findomain -t target.com -q
-
-# https://github.com/lc/gau
-# https://github.com/tomnomnom/unfurl
-echo target.com | gau --subs | unfurl -u domains
-cat domains.txt | gau --threads 5
 
 # https://github.com/tomnomnom/waybackurls
 # https://github.com/tomnomnom/unfurl
+# 获取所有 waybackuls 中包含的 url, 并过滤出子域
 echo target.com | waybackurls | unfurl -u domains
 cat domains.txt | waybackurls | unfurl -u domains
 
-# crt.sh
-https://github.com/UnaPibaGeek/ctfr
+# https://github.com/lc/gau
+# https://github.com/tomnomnom/unfurl
+# 包括从 Open Threat Exchange、Wayback Machine、Common Crawl 和 URLScan 获取已知的 URL
+echo target.com | gau --subs | unfurl -u domains
+cat domains.txt | gau --threads 5
+
+# https://github.com/UnaPibaGeek/ctfr
+# 单独获取 crt.sh 的结果。(在 assetfinder 中也包括)
 python3 ctfr.py -d bilibili.com | unfurl -u domains
 ```
 
-## Brute Force
+## Active DNS resolution
+
+**Wordlists**
 
 * [https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/](https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-5000.txt)
 * [https://github.com/fuzzdb-project/fuzzdb/tree/master/discovery/dns](https://github.com/fuzzdb-project/fuzzdb/tree/master/discovery/dns)
 * [https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts](https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts)
 
 ```bash
+# https://public-dns.info/ 实时生成最新的解析器列表
 # https://github.com/vortexau/dnsvalidator
+dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 100 -o resolvers.txt
 
-# 大多数 DNS 解析器的根基, 但容易出现误报
 # https://github.com/blechschmidt/massdns
-
 # https://github.com/d3mondev/puredns
+
 # https://github.com/projectdiscovery/shuffledns
 
 ```
