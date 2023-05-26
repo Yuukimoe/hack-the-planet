@@ -4,7 +4,6 @@
 
 ## Recon
 
-* [testettest](recon/testettest.md)
 * [Subdomain Enum](recon/subdomain-enum.md)
 
 ## Resources
