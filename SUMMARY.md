@@ -4,7 +4,8 @@
 
 ## Recon
 
-* [Subdomain Enum](recon/readme.md)
+* [testettest](recon/testettest.md)
+* [Subdomain Enum](recon/subdomain-enum.md)
 
 ## Resources
 
