@@ -1,13 +1,6 @@
 # Subdomain Enum
 
-
-
-* DNS
-* Passive sources
-* Active DNS resolution
-* Permutation
-
-## DNS
+## DNS Enumeration
 
 ```bash
 # DNS record/Zone Transfer
@@ -50,23 +43,25 @@ python3 ctfr.py -d bilibili.com | unfurl -u domains
 
 ## Active DNS resolution
 
-**Wordlists**
-
-* [https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/](https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-5000.txt)
-* [https://github.com/fuzzdb-project/fuzzdb/tree/master/discovery/dns](https://github.com/fuzzdb-project/fuzzdb/tree/master/discovery/dns)
-* [https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts](https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts)
-
 ```bash
-# https://public-dns.info/ 实时生成最新的解析器列表
+# Subdomain Wordlists
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/
+https://github.com/fuzzdb-project/fuzzdb/tree/master/discovery/dns
+https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts
+
+# 实时生成最新的 Resolvers
+# https://public-dns.info/
 # https://github.com/vortexau/dnsvalidator
 dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 100 -o resolvers.txt
 
+# Resolution
 # https://github.com/blechschmidt/massdns
 # https://github.com/d3mondev/puredns
-
 # https://github.com/projectdiscovery/shuffledns
 
 ```
+
+
 
 
 
