@@ -1,3 +1,7 @@
-# Initialization
+# \~/yuuki/pentest-note
 
-Hello
+> Hi there 👋
+
+{% embed url="https://github.com/moeuuki/pentest-note" %}
+GitHub Pages
+{% endembed %}

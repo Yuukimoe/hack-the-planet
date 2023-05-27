@@ -1,6 +1,6 @@
 # Table of contents
 
-* [\~/Pentest Note](README.md)
+* [\~/yuuki/pentest-note](README.md)
 
 ## Recon
 
@@ -8,7 +8,7 @@
 
 ## Resource
 
-* [Awesome Hacking](resource/awesome-hacking/README.md)
-  * [Script Kid's Paradise](resource/awesome-hacking/script-kids-paradise.md)
-  * [Reference Materials](resource/awesome-hacking/reference-materials.md)
-  * [Virtual Private Server](resource/awesome-hacking/virtual-private-server.md)
+* [Awesome Hacking](awesome-hacking/inbox.md)
+  * [Script Kid's Paradise](awesome-hacking/script-kiddie.md)
+  * [Reference Materials](awesome-hacking/reference-materials.md)
+  * [Virtual Private Server](awesome-hacking/vps-server.md)
