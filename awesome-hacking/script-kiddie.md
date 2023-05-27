@@ -28,6 +28,15 @@ cat domains.txt | gau --threads 5
 # https://github.com/projectdiscovery/shuffledns
 ```
 
+**Wordlists**
+
+```bash
+# Subdomain Wordlists
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/
+https://github.com/fuzzdb-project/fuzzdb/tree/master/discovery/dns
+https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts
+```
+
 **Integrated Framework**
 
 ```bash
