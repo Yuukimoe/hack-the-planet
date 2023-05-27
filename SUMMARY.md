@@ -1,14 +1,14 @@
 # Table of contents
 
-* [Pentest Note](README.md)
+* [\~/Pentest Note](README.md)
 
 ## Recon
 
 * [Subdomain Enum](recon/subdomain-enum.md)
 
-## Awesome Hacking
+## Resource
 
-* [Inbox](awesome-hacking/inbox.md)
-* [Script Kiddie](awesome-hacking/script-kiddie.md)
-* [Reference Materials](awesome-hacking/reference-materials.md)
-* [VPS Server](awesome-hacking/vps-server.md)
+* [Awesome Hacking](resource/awesome-hacking/README.md)
+  * [Script Kid's Paradise](resource/awesome-hacking/script-kids-paradise.md)
+  * [Reference Materials](resource/awesome-hacking/reference-materials.md)
+  * [Virtual Private Server](resource/awesome-hacking/virtual-private-server.md)

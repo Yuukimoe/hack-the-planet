@@ -46,7 +46,7 @@ echo target.com | waybackurls | unfurl -u domains > waybackurls_subs.txt
 ## Open Threat Exchange | Common Crawl | URLScan
 # https://github.com/lc/gau
 # https://github.com/tomnomnom/unfurl
-echo target.com | gau --subs | unfurl -u domains > gau_subs.txt
+echo target.com | gau --subs --threads 200 | unfurl -u domains > gau_subs.txt
 ```
 
 ## Active DNS resolution
@@ -55,7 +55,7 @@ echo target.com | gau --subs | unfurl -u domains > gau_subs.txt
 ## Generate resolvers lsits
 # https://public-dns.info/
 # https://github.com/vortexau/dnsvalidator
-dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 100 -o resolvers.txt
+dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o resolvers.txt
 
 ## Resolution
 # https://github.com/d3mondev/puredns
