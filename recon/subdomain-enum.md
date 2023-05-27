@@ -9,29 +9,15 @@ python3 dnsrecon.py -d target.com
 
 ## Passive sources
 
-> <mark style="color:red;">**时刻保持网络的通常**</mark>
-
-<pre class="language-bash"><code class="lang-bash">## Mapping Source
-# https://github.com/shmilylty/OneForAll
-# 修改部分配置 https://gist.github.com/moeuuki/cb6fbabe868ffab3c84f5886f3957326
-python3 oneforall.py --target target.com --path /path/to/subs.json run
-jq -r '.[].subdomain' target.com.json
-
+```bash
+## Mapping Source
 # https://github.com/OWASP/Amass
 # https://github.com/OWASP/Amass/blob/master/examples/config.ini
-amass enum -config ~/.config/amass/config.ini -d target.com
-
-# https://github.com/projectdiscovery/subfinder
-subfinder -all -silent -d target.com
+amass enum -config ~/.config/amass/config.ini -d target.com -o amass_subs.txt
 
 # https://github.com/tomnomnom/assetfinder
-<strong>assetfinder -subs-only target.com
-</strong><strong>
-</strong><strong>## Wayback Machine
-</strong># https://github.com/tomnomnom/waybackurls
-# https://github.com/tomnomnom/unfurl
-<strong>echo target.com | waybackurls | unfurl -u domains > waybackurls_subs.txt
-</strong>
+assetfinder -subs-only target.com > assetfinder_subs.txt
+
 ## Cert Transparency
 # https://certificate.transparency.dev/
 # https://crt.sh/
@@ -40,13 +26,28 @@ python3 ctfr.py -d domain.com -o ctfr_subs.txt
 
 ## Github
 # https://github.com/gwen001/github-subdomains
-github-subdomains -q -raw -t ~/.config/github-subdomains/github_token.txt -d target.com
+github-subdomains -q -raw -t ~/.config/github-subdomains/github_token.txt -d target.com > github-subdomain_subs.txt
 
+## Mapping Source (2)
+# https://github.com/shmilylty/OneForAll
+# 修改部分配置 https://gist.github.com/moeuuki/cb6fbabe868ffab3c84f5886f3957326
+python3 oneforall.py --target target.com --path ./subs.json run
+jq -r '.[].subdomain' target.com.json > oneforall_subs.txt
+
+# https://github.com/projectdiscovery/subfinder
+subfinder -all -silent -d target.com
+
+## Wayback Machine
+# https://github.com/tomnomnom/waybackurls
+# https://github.com/tomnomnom/unfurl
+echo target.com | waybackurls | unfurl -u domains > waybackurls_subs.txt
+
+# --- 要花费很长的时间 20230528
 ## Open Threat Exchange | Common Crawl | URLScan
 # https://github.com/lc/gau
 # https://github.com/tomnomnom/unfurl
 echo target.com | gau --subs | unfurl -u domains > gau_subs.txt
-</code></pre>
+```
 
 ## Active DNS resolution
 
