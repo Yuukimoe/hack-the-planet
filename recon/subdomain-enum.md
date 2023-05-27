@@ -37,16 +37,6 @@ amass enum -d target.com -config ~/.config/amass/config.ini
 # https://github.com/tomnomnom/assetfinder
 assetfinder -subs-only target.com
 
-# https://github.com/Findomain/Findomain/
-# 快速的生成大量子域列表, 同时包括屏幕截图、端口扫描、HTTP 检查等功能
-findomain -t target.com -q
-
-# https://github.com/tomnomnom/waybackurls
-# https://github.com/tomnomnom/unfurl
-# 获取所有 waybackuls 中包含的 url, 并过滤出子域
-echo target.com | waybackurls | unfurl -u domains
-cat domains.txt | waybackurls | unfurl -u domains
-
 # https://github.com/lc/gau
 # https://github.com/tomnomnom/unfurl
 # 包括从 Open Threat Exchange、Wayback Machine、Common Crawl 和 URLScan 获取已知的 URL

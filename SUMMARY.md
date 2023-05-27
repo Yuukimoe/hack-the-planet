@@ -6,8 +6,9 @@
 
 * [Subdomain Enum](recon/subdomain-enum.md)
 
-## Resources
+## Awesome Hacking
 
-* [Reconnaissance](resources/reconnaissance.md)
-* [Navigation](resources/navigation.md)
-* [VPS](resources/vps.md)
+* [Inbox](awesome-hacking/inbox.md)
+* [Script Kiddie](awesome-hacking/script-kiddie.md)
+* [Reference Materials](awesome-hacking/reference-materials.md)
+* [VPS Server](awesome-hacking/vps-server.md)
