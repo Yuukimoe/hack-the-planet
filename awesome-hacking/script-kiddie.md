@@ -1,16 +1,20 @@
 # Script Kid's Paradise
 
+## URL extraction
+
+<table><thead><tr><th width="207">Name</th><th>Acquisition method</th></tr></thead><tbody><tr><td><a href="https://github.com/lc/gau">gau</a></td><td>Open Threat Exchange, Wayback Machine, Common Crawl, URLScan</td></tr></tbody></table>
+
 ## Subdomain Enum
 
 ### Multiple Sources
 
-<table><thead><tr><th width="202">Name</th><th>Source</th></tr></thead><tbody><tr><td><a href="https://github.com/owasp-amass/amass">amass</a></td><td>APIs, Certificates, DNS, Routing, Scraping, Web Archives, WHOIS</td></tr><tr><td><a href="https://github.com/tomnomnom/assetfinder">assetfinder</a></td><td>crt.sh, certspotter, hackertarget, threatcrowd, wayback machine, dns.bufferover.run, facebook, virustotal, findsubdomains</td></tr><tr><td><a href="https://github.com/Findomain/Findomain/">Findomain</a></td><td>快速的生成大量子域列表, 同时包括屏幕截图、端口扫描、HTTP 检查等功能</td></tr></tbody></table>
+<table><thead><tr><th width="202">Name</th><th>Source</th></tr></thead><tbody><tr><td><a href="https://github.com/owasp-amass/amass">amass</a></td><td>APIs, Certificates, DNS, Routing, Scraping, Web Archives, WHOIS</td></tr><tr><td><a href="https://github.com/tomnomnom/assetfinder">assetfinder</a></td><td>crt.sh, certspotter, hackertarget, threatcrowd, wayback machine, dns.bufferover.run, facebook, virustotal, findsubdomains</td></tr><tr><td><a href="https://github.com/Findomain/Findomain/">Findomain</a></td><td>Certspotter, Crt.sh Database (favorite) or Crt.sh HTTP API, Virustotal, Sublist3r, Facebook, Spyse (CertDB), Bufferover, Threatcrowd, Virustotal with apikey, AnubisDB, Urlscan.io, SecurityTrails, Threatminer, C99, Archive.org, CTSearch</td></tr><tr><td><a href="https://github.com/shmilylty/OneForAll">OneForAll</a></td><td>证书透明度, 常规检查, 爬虫档案, DNS, 威胁情报, 搜索引擎</td></tr><tr><td><a href="https://github.com/projectdiscovery/subfinder">subfinder</a></td><td>BeVigil, BinaryEdge, BufferOver, C99, Censys, CertSpotter, Chaos, Chinaz, DnsDB, Fofa, FullHunt, GitHub, Intelx, PassiveTotal, quake, Robtex, SecurityTrails, Shodan, ThreatBook, VirusTotal, WhoisXML API, ZoomEye, ZoomEye API, dnsrepo, Hunter</td></tr></tbody></table>
 
-#### asdasd
+
 
 ### Single Sources
 
-<table><thead><tr><th width="203">Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://github.com/gwen001/github-subdomains">github-subdomains</a></td><td>Find <em>subdomains</em> on <em>GitHub</em>.</td></tr><tr><td></td><td></td></tr><tr><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="203">Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://github.com/gwen001/github-subdomains">github-subdomains</a></td><td>Find subdomains on GitHub.</td></tr><tr><td><a href="https://github.com/UnaPibaGeek/ctfr">ctfr</a></td><td>Abusing Certificate Transparency logs for getting HTTPS websites subdomains.</td></tr><tr><td><a href="https://github.com/tomnomnom/waybackurls">waybackurls</a></td><td>Fetch all the URLs that the Wayback Machine knows about for a domain</td></tr></tbody></table>
 
 ## **DNS Resolve**
 

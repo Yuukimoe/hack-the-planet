@@ -41,12 +41,11 @@ subfinder -all -silent -d target.com
 # https://github.com/tomnomnom/waybackurls
 # https://github.com/tomnomnom/unfurl
 echo target.com | waybackurls | unfurl -u domains > waybackurls_subs.txt
+```
 
-# --- 要花费很长的时间 20230528
-## Open Threat Exchange | Common Crawl | URLScan
-# https://github.com/lc/gau
-# https://github.com/tomnomnom/unfurl
-echo target.com | gau --subs --threads 200 | unfurl -u domains > gau_subs.txt
+## Certificate transparency
+
+```bash
 ```
 
 ## Active DNS resolution
