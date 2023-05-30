@@ -5,11 +5,11 @@
 ## Recon
 
 * [Subdomain Enum](recon/subdomain-enum.md)
-* [WebServer Recon](recon/webserver-recon.md)
+* [Web API Pentesting](recon/web-api-pentesting.md)
 
 ## Resource
 
-* [Awesome Hacking](awesome-hacking/inbox.md)
-  * [Script Kid's Paradise](awesome-hacking/script-kiddie.md)
-  * [Reference Materials](awesome-hacking/reference-materials.md)
-  * [Virtual Private Server](awesome-hacking/vps-server.md)
+* [Reference Materials](resource/reference-materials.md)
+* [Learning Roadmap](resource/learning-roadmap.md)
+* [Script Kid's Paradise](resource/script-kids-paradise.md)
+* [Virtual Private Server](resource/virtual-private-server.md)
