@@ -35,6 +35,16 @@ https://github.com/fuzzdb-project/fuzzdb/tree/master/discovery/dns
 https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts
 ```
 
+## Screenshot
+
+* [https://github.com/sensepost/gowitness](https://github.com/sensepost/gowitness) 2.2k
+* [https://github.com/FortyNorthSecurity/EyeWitness](https://github.com/FortyNorthSecurity/EyeWitness) 4.2k
+* [https://github.com/breenmachine/httpscreenshot](https://github.com/breenmachine/httpscreenshot) 602
+* [https://github.com/michenriksen/aquatone](https://github.com/michenriksen/aquatone) 5.2k Archived
+* [https://github.com/maaaaz/webscreenshot](https://github.com/maaaaz/webscreenshot) 623
+* [https://github.com/BishopFox/eyeballer](https://github.com/BishopFox/eyeballer) AI analyzing screenshot
+* [https://shutter-project.org/](https://shutter-project.org/)
+
 ## **Integrated Framework**
 
 <table><thead><tr><th width="202">Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://github.com/yogeshojha/rengine">rengine</a></td><td>支持自定义扫描工具配置文件、Web 截屏、Nuclei POC 扫描、导入导出数据、CMS、To-do 等功能。</td></tr><tr><td><a href="https://github.com/pry0cc/axiom">axiom</a></td><td>Axiom dynamic infrastructure framework。可以为不同的工具分配不同的工作负载 (即工作量), 例如 ffu、masscan。</td></tr><tr><td><a href="https://github.com/TophantTechnology/ARL/">ARL</a></td><td>ARL 图形化侦查框架</td></tr><tr><td><a href="https://github.com/remonsec/SEF">SEF</a></td><td>SEF 子域枚举框架，涵盖被动、主动和置换枚举</td></tr></tbody></table>

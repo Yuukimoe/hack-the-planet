@@ -4,7 +4,7 @@
 
 ## reconnaissance
 
-* [Subdomain Enum](reconnaissance/subdomain-enum/README.md)
+* [Subdomain Enum](recon/subdomain-enum.md)
   * [Web Server resolution](reconnaissance/subdomain-enum/web-server-resolution.md)
 
 ## pentesting web
@@ -14,6 +14,6 @@
 ## 🗃 Resources
 
 * [Reference Materials](resources/reference-materials.md)
-* [Learning Roadmap](resources/learning-roadmap.md)
-* [Script Kid's Paradise](resources/script-kids-paradise.md)
-* [Virtual Private Server](resources/virtual-private-server.md)
+* [Learning Roadmap](awesome-hacking/inbox.md)
+* [Script Kid's Paradise](awesome-hacking/script-kiddie.md)
+* [Virtual Private Server](awesome-hacking/vps-server.md)

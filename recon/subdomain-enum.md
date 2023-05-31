@@ -48,19 +48,29 @@ puredns resolve .subs.txt --resolvers lists/resolvers.txt -w subs/resolved_subs.
 <strong>## NOERROR DNS record
 </strong># https://github.com/projectdiscovery/dnsx
 dnsx -r .resolvers.txt -l subs/* -rcode noerror -retry 3 -silent | cut -d' ' -f1 | tee subs/noerror_subs.txt
-
-<strong>## Permutation
-</strong>TBD
-
-<strong>## BruteForce
-</strong>TBD
 </code></pre>
 
 ## Permutation
 
-TBD
+```bash
+# TBD
+```
 
 ## BruteForce
 
-TBD
+```bash
+## BruteForce
+# wordlists
+# https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/
+# https://github.com/fuzzdb-project/fuzzdb/tree/master/discovery/dns
+# https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts
+```
+
+## Other techniques
+
+```bash
+# https://github.com/lc/gau
+# https://github.com/tomnomnom/unfurl
+gau --subs example.com | unfurl -u domains
+```
 
