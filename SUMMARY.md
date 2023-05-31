@@ -10,6 +10,7 @@
 ## pentesting web
 
 * [Web API Pentesting](pentesting-web/web-api-pentesting.md)
+* [SQL Injection](pentesting-web/sql-injection.md)
 
 ## 🗃 Resources
 
