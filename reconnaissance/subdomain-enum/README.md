@@ -39,15 +39,15 @@ echo target.com | waybackurls | unfurl -u domains | tee subs/waybackurls_subs.tx
 <pre class="language-bash"><code class="lang-bash"><strong>## Generate resolvers lsits
 </strong># https://public-dns.info/
 # https://github.com/vortexau/dnsvalidator
-dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o subs/.resolvers.txt
+dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o lists/resolvers.txt
 
 <strong>## Active DNS record
 </strong># https://github.com/d3mondev/puredns
-puredns resolve .subs.txt --resolvers .resolvers.txt -w subs/.resolved_subs.txt
+puredns resolve .subs.txt --resolvers lists/resolvers.txt -w subs/resolved_subs.txt
 
 <strong>## NOERROR DNS record
 </strong># https://github.com/projectdiscovery/dnsx
-dnsx -r .resolvers.txt -l subs/* -rcode noerror -retry 3 -silent | cut -d' ' -f1 | tee subs/.noerror_subs.txt
+dnsx -r .resolvers.txt -l subs/* -rcode noerror -retry 3 -silent | cut -d' ' -f1 | tee subs/noerror_subs.txt
 
 <strong>## Permutation
 </strong>TBD
@@ -56,29 +56,11 @@ dnsx -r .resolvers.txt -l subs/* -rcode noerror -retry 3 -silent | cut -d' ' -f1
 </strong>TBD
 </code></pre>
 
-## Web Server resolution
+## Permutation
 
-<pre class="language-bash"><code class="lang-bash"><strong>## Active Web resolution (5486 subdomains cost about 11 minutes)
-</strong># https://github.com/tomnomnom/httprobe
-cat subs/.subs.txt | httprobe -c 50 -p 8080,8081,8089 | tee webs/httprobe_webs.txt
+TBD
 
-<strong>## Basic information Identify (7156 url cost about 6 minutes)
-</strong># https://github.com/projectdiscovery/httpx
-cat webs/httprobe_webs.txt | httpx -sc -fr -title -web-server -tech-detect -location \
--json -o webs/httpx_webs.json
+## BruteForce
 
-<strong>## 根据 200 状态码筛选 URL
-</strong>cat webs/httpx_webs.json | jq -r '. | select(.status_code==200) | .url' > webs/200.txt
-
-<strong>## Basic information &#x26; Screenshot (Not recommended)
-</strong>cat webs/httprobe_webs.txt | httpx -sc -fr -title -web-server -tech-detect -location \
--json -o webs/httpx/httpx_webs.json -screenshot -srd webs/httpx_webs/
-</code></pre>
-
-## Screenshot
-
-```bash
-# https://github.com/sensepost/gowitness/
-gowitness 
-```
+TBD
 

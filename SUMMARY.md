@@ -2,14 +2,18 @@
 
 * [\~/yuuki/pentest-note](README.md)
 
-## Recon
+## reconnaissance
 
-* [Subdomain Enum](recon/subdomain-enum.md)
-* [Web API Pentesting](recon/web-api-pentesting.md)
+* [Subdomain Enum](reconnaissance/subdomain-enum/README.md)
+  * [Web Server resolution](reconnaissance/subdomain-enum/web-server-resolution.md)
 
-## Resource
+## pentesting web
 
-* [Reference Materials](resource/reference-materials.md)
-* [Learning Roadmap](resource/learning-roadmap.md)
-* [Script Kid's Paradise](resource/script-kids-paradise.md)
-* [Virtual Private Server](resource/virtual-private-server.md)
+* [Web API Pentesting](pentesting-web/web-api-pentesting.md)
+
+## 🗃 Resources
+
+* [Reference Materials](resources/reference-materials.md)
+* [Learning Roadmap](resources/learning-roadmap.md)
+* [Script Kid's Paradise](resources/script-kids-paradise.md)
+* [Virtual Private Server](resources/virtual-private-server.md)
