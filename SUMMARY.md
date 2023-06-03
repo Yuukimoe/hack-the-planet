@@ -2,6 +2,10 @@
 
 * [\~/yuuki/pentest-note](README.md)
 
+## Generic Methodology
+
+* [Proxy Pool](generic-methodology/proxy-pool.md)
+
 ## reconnaissance
 
 * [Subdomain Enum](recon/subdomain-enum.md)
