@@ -4,8 +4,9 @@
 
 ## recon
 
-* [Subdomain Enum](recon/subdomain-enum/README.md)
-  * [Web Server resolution](recon/subdomain-enum/web-server-resolution.md)
+* [Root Domain](recon/root-domain.md)
+* [Subdomain Enum](recon/subdomain-enum.md)
+  * [Web Server resolution](reconnaissance/subdomain-enum/web-server-resolution.md)
 
 ## pentesting web
 
