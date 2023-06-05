@@ -2,21 +2,21 @@
 
 * [\~/yuuki/pentest-note](README.md)
 
-## Generic Methodology
+## recon
 
-* [Proxy Pool](generic-methodology/proxy-pool.md)
-
-## reconnaissance
-
-* [Subdomain Enum](recon/subdomain-enum.md)
-  * [Web Server resolution](reconnaissance/subdomain-enum/web-server-resolution.md)
+* [Subdomain Enum](recon/subdomain-enum/README.md)
+  * [Web Server resolution](recon/subdomain-enum/web-server-resolution.md)
 
 ## pentesting web
 
 * [Web API Pentesting](pentesting-web/web-api-pentesting.md)
 * [SQL Injection](pentesting-web/sql-injection.md)
 
-## 🗃 Resources
+## Generic Methodology
+
+* [Proxy Pool](generic-methodology/proxy-pool.md)
+
+## resources
 
 * [Reference Materials](resources/reference-materials.md)
 * [Learning Roadmap](awesome-hacking/inbox.md)
