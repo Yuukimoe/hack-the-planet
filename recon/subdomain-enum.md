@@ -41,13 +41,17 @@ echo target.com | waybackurls | unfurl -u domains | tee subs/waybackurls_subs.tx
 # https://github.com/vortexau/dnsvalidator
 dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o lists/resolvers.txt
 
-<strong>## Active DNS record
-</strong># https://github.com/d3mondev/puredns
-puredns resolve .subs.txt --resolvers lists/resolvers.txt -w subs/resolved_subs.txt
+## or
+# https://github.com/teknogeek/fresh.py
+python3 fresh.py -o resolvers.txt
 
 <strong>## NOERROR DNS record
 </strong># https://github.com/projectdiscovery/dnsx
-dnsx -r .resolvers.txt -l subs/* -rcode noerror -retry 3 -silent | cut -d' ' -f1 | tee subs/noerror_subs.txt
+dnsx -r lists/resolvers.txt -l subs/* -rcode noerror -retry 3 -silent | cut -d' ' -f1 | tee subs/noerror_subs.txt
+
+<strong>## Active DNS record
+</strong># https://github.com/d3mondev/puredns
+puredns resolve .subs.txt --resolvers lists/resolvers.txt -w subs/resolved_subs.txt
 </code></pre>
 
 ## Permutation
