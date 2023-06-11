@@ -6,12 +6,13 @@
 
 * [Root Domain](recon/root-domain.md)
 * [Subdomain Enum](recon/subdomain-enum.md)
-  * [Web Server resolution](reconnaissance/subdomain-enum/web-server-resolution.md)
+* [Webs Recon](recon/webs-recon.md)
 
 ## pentesting web
 
 * [Web API Pentesting](pentesting-web/web-api-pentesting.md)
 * [SQL Injection](pentesting-web/sql-injection.md)
+* [WeChat Mini Program](pentesting-web/wechat-mini-program.md)
 
 ## Generic Methodology
 

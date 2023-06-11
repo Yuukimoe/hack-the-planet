@@ -10,7 +10,13 @@
 
 <table><thead><tr><th width="202">Name</th><th>Source</th></tr></thead><tbody><tr><td><a href="https://github.com/owasp-amass/amass">amass</a></td><td>APIs, Certificates, DNS, Routing, Scraping, Web Archives, WHOIS</td></tr><tr><td><a href="https://github.com/tomnomnom/assetfinder">assetfinder</a></td><td>crt.sh, certspotter, hackertarget, threatcrowd, wayback machine, dns.bufferover.run, facebook, virustotal, findsubdomains</td></tr><tr><td><a href="https://github.com/Findomain/Findomain/">Findomain</a></td><td>Certspotter, Crt.sh Database (favorite) or Crt.sh HTTP API, Virustotal, Sublist3r, Facebook, Spyse (CertDB), Bufferover, Threatcrowd, Virustotal with apikey, AnubisDB, Urlscan.io, SecurityTrails, Threatminer, C99, Archive.org, CTSearch</td></tr><tr><td><a href="https://github.com/shmilylty/OneForAll">OneForAll</a></td><td>证书透明度, 常规检查, 爬虫档案, DNS, 威胁情报, 搜索引擎</td></tr><tr><td><a href="https://github.com/projectdiscovery/subfinder">subfinder</a></td><td>BeVigil, BinaryEdge, BufferOver, C99, Censys, CertSpotter, Chaos, Chinaz, DnsDB, Fofa, FullHunt, GitHub, Intelx, PassiveTotal, quake, Robtex, SecurityTrails, Shodan, ThreatBook, VirusTotal, WhoisXML API, ZoomEye, ZoomEye API, dnsrepo, Hunter</td></tr></tbody></table>
 
-### &#x20;Single source
+### Single source
+
+| Name                                                              | Description                                                                  |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| [github-subdomains](https://github.com/gwen001/github-subdomains) | Find subdomains on GitHub.                                                   |
+| [ctfr](https://github.com/UnaPibaGeek/ctfr)                       | Abusing Certificate Transparency logs for getting HTTPS websites subdomains. |
+| [waybackurls](https://github.com/tomnomnom/waybackurls)           | Fetch all the URLs that the Wayback Machine knows about for a domain         |
 
 ### Permutations
 
@@ -32,15 +38,20 @@
 
 <table><thead><tr><th width="203">Name</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://github.com/projectdiscovery/httpx">httpx</a></td><td>快速的、多功能的 HTTP 工具包</td></tr><tr><td><a href="https://github.com/tomnomnom/httprobe">httprobe</a></td><td>通过域名列表探测 HTTP 或 HTTPS 服务</td></tr><tr><td><a href="https://github.com/theblackturtle/fprobe">fprobe</a></td><td>获取域/子域的列表并探测的 HTTP/HTTPS 服务器</td></tr></tbody></table>
 
+## Port Scan
+
+* [https://github.com/projectdiscovery/naabu](https://github.com/projectdiscovery/naabu) 可以对域名进行端口扫描
+* [https://github.com/RustScan/RustScan](https://github.com/RustScan/RustScan) 支持 IP, Host, CIDR, File
+
 ## **Wordlists**
 
 ```bash
 # Subdomain Wordlists
-# https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/
-# https://github.com/fuzzdb-project/fuzzdb/tree/master/discovery/dns
-# https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts
-# https://wordlists-cdn.assetnote.io/data/manual/best-dns-wordlist.txt
-# https://localdomain.pw/subdomain-bruteforce-list/all.txt.zip
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/
+https://github.com/fuzzdb-project/fuzzdb/tree/master/discovery/dns
+https://github.com/TheKingOfDuck/fuzzDicts/tree/master/subdomainDicts
+https://wordlists-cdn.assetnote.io/data/manual/best-dns-wordlist.txt
+https://localdomain.pw/subdomain-bruteforce-list/all.txt.zip
 ```
 
 ## Screenshot

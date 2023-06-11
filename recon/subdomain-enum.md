@@ -39,7 +39,7 @@ python3 ~/tools/recon-tools/ctfr/ctfr.py -d target.com | unfurl -u domains | ane
 echo target.com | waybackurls | unfurl -u domains | anew subs.txt | wc -l
 </code></pre>
 
-## BruteForce
+## Active DNS resolution
 
 <pre class="language-bash"><code class="lang-bash"><strong># Subdomain wordlists
 </strong># https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-110000.txt
@@ -60,7 +60,7 @@ shuffledns -d target.com -r lists/resolvers.txt -w lists/subdict.txt -silent | a
 
 <strong>## Active DNS record
 </strong># https://github.com/d3mondev/puredns
-puredns resolve subs.txt --resolvers lists/resolvers.txt -w subs/resolved.txt
+puredns resolve subs.txt -r lists/resolvers.txt -w resolved.txt | wc -l
 </code></pre>
 
 ## Permutation
@@ -74,6 +74,13 @@ curl https://raw.githubusercontent.com/TophantTechnology/ARL/master/app/dicts/al
 
 # https://github.com/Josue87/gotator
 gotator -sub subdomains/subdomains.txt -perm permutations_list.txt -depth 1 -numbers 10 -mindup -adv -md
+```
+
+## DNS records
+
+```bash
+# https://github.com/projectdiscovery/dnsx
+dnsx -l resolved.txt -json -o dns.json | jq -r '.a?[]?' | anew ips.txt | wc -l
 ```
 
 ## Other techniques
