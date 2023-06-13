@@ -2,25 +2,32 @@
 
 * [\~/yuuki/pentest-note](README.md)
 
-## recon
+## 🔭 recon
 
-* [Root Domain](recon/root-domain.md)
+* [Public info gathering](recon/public-info-gathering.md)
 * [Subdomain Enum](recon/subdomain-enum.md)
+* [Root domains](recon/root-domains.md)
 * [Webs Recon](recon/webs-recon.md)
 
-## pentesting web
+## 🐛 pentesting web
 
 * [Web API Pentesting](pentesting-web/web-api-pentesting.md)
 * [SQL Injection](pentesting-web/sql-injection.md)
-* [WeChat Mini Program](pentesting-web/wechat-mini-program.md)
+* [Host collision](pentesting-web/host-collision.md)
+* [Information Leakage](pentesting-web/information-leakage.md)
 
-## Generic Methodology
+## 📱 Mobile Pentesting
+
+* [Android](mobile-pentesting/android.md)
+* [小程序](mobile-pentesting/xiao-cheng-xu.md)
+
+## 🤩 Generic Methodology
 
 * [Proxy Pool](generic-methodology/proxy-pool.md)
 
-## resources
+## 🗄 resources
 
 * [Reference Materials](resources/reference-materials.md)
-* [Learning Roadmap](awesome-hacking/inbox.md)
 * [Script Kid's Paradise](awesome-hacking/script-kiddie.md)
+* [Learning Roadmap](awesome-hacking/inbox.md)
 * [Virtual Private Server](awesome-hacking/vps-server.md)

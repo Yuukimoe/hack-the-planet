@@ -1,10 +1,8 @@
 # Subdomain Enum
 
-## Passive sources
+## Passive
 
-{% hint style="info" %}
-<mark style="color:orange;">**所有被动源的子域名枚举操作都建议在网络环境良好的情况下执行**</mark>
-{% endhint %}
+> _所有被动源的子域名枚举操作都建议在网络环境良好的情况下执行_
 
 <pre class="language-bash"><code class="lang-bash"><strong># Multiple sources
 </strong># https://github.com/OWASP/Amass
@@ -39,48 +37,64 @@ python3 ~/tools/recon-tools/ctfr/ctfr.py -d target.com | unfurl -u domains | ane
 echo target.com | waybackurls | unfurl -u domains | anew subs.txt | wc -l
 </code></pre>
 
-## Active DNS resolution
+## Active
 
-<pre class="language-bash"><code class="lang-bash"><strong># Subdomain wordlists
-</strong># https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-110000.txt
-# https://github.com/TophantTechnology/ARL/blob/master/app/dicts/domain_2w.txt
-curl https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/subdomains-top1million-110000.txt https://raw.githubusercontent.com/TophantTechnology/ARL/master/app/dicts/domain_2w.txt | anew lists/subdict.txt | wc -l
-
-<strong># Generate resolvers lsits
-</strong># https://github.com/vortexau/dnsvalidator
+```bash
+# Generate resolvers lsits
+# https://github.com/vortexau/dnsvalidator
 dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o lists/resolvers.txt
 
 ## or
 # https://github.com/teknogeek/fresh.py
 python3 ~/tools/recon-tools/fresh.py/fresh.py --clean ~/tools/recon-tools/fresh.py/clean_regex.txt -o lists/resolvers.txt -j 200
 
-<strong># Brute-Force
-</strong># https://github.com/projectdiscovery/shuffledns
+# BF
+# https://github.com/projectdiscovery/shuffledns
 shuffledns -d target.com -r lists/resolvers.txt -w lists/subdict.txt -silent | anew subs.txt | wc -l
+shuffledns -l roots.txt -r lists/resolvers.txt -w lists/subdict.txt -silent | anew subs.txt | wc -l
 
-<strong>## Active DNS record
-</strong># https://github.com/d3mondev/puredns
+# Active DNS record
+# https://github.com/d3mondev/puredns
 puredns resolve subs.txt -r lists/resolvers.txt -w resolved.txt | wc -l
-</code></pre>
+```
 
 ## Permutation
 
-```bash
-## wordlists
-# https://github.com/infosec-au/altdns/blob/master/words.txt
-# https://github.com/TophantTechnology/ARL/blob/master/app/dicts/altdnsdict.txt
-curl https://raw.githubusercontent.com/infosec-au/altdns/master/words.txt | anew altdnsdict.txt
-curl https://raw.githubusercontent.com/TophantTechnology/ARL/master/app/dicts/altdnsdict.txt | anew altdnsdict.txt
+> 排列组合的操作费时 (又废内存), 在针对特定目标进行渗透测试时可以使用。
 
+```bash
 # https://github.com/Josue87/gotator
-gotator -sub subdomains/subdomains.txt -perm permutations_list.txt -depth 1 -numbers 10 -mindup -adv -md
+gotator -sub subs.txt -perm words.txt -depth 1 -numbers 10 -mindup -adv -md -silent
+
+# https://github.com/infosec-au/altdns
+altdns -i subs.txt -o out.txt -w words.txt -r -s results_output.txt
 ```
 
 ## DNS records
 
 ```bash
 # https://github.com/projectdiscovery/dnsx
-dnsx -l resolved.txt -json -o dns.json | jq -r '.a?[]?' | anew ips.txt | wc -l
+dnsx -l resolved.txt -json -o dns.json | wc -l
+
+# get A record + IPs
+cat dnsx.json | jq -r '.a?[]?' | anew ips.txt
+```
+
+## Wordlists
+
+```bash
+# General
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/DNS/subdomains-top1million-110000.txt
+https://github.com/TophantTechnology/ARL/blob/master/app/dicts/domain_2w.txt
+
+# Permutation
+https://github.com/infosec-au/altdns/blob/master/words.txt
+https://github.com/TophantTechnology/ARL/blob/master/app/dicts/altdnsdict.txt
+https://github.com/moeuuki/Furry/tree/main/subdomain
+
+# Deepth + Test Env + Intra Env
+https://github.com/joinsec/BadDNS/blob/master/depthdict.txt
+https://github.com/moeuuki/Furry/tree/main/subdomain
 ```
 
 ## Other techniques
