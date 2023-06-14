@@ -2,6 +2,8 @@
 
 ## 工商信息
 
+### 控股/子公司
+
 工商信息收集基本流程
 
 1. 企业官网寻找备案号 -> 通过备案号获取公司名称
@@ -34,7 +36,7 @@ https://www.beian.gov.cn/portal/registerSystemInfo
 https://icp.chinaz.com/psorgan
 ```
 
-## 域名收集
+### 域名
 
 ```bash
 # Reverse ICP
@@ -50,10 +52,54 @@ https://www.whoxy.com/
 https://hackertarget.com/zone-transfer/
 ```
 
-## 自动化工具
+### 工具
 
 ```bash
 # 企业信息收集
 # https://github.com/wgpsec/ENScan_GO
-enscan -n company -invest 50
+enscan -n company -invest 50 -is-merge
+enscan -f subcompany.txt -invest 50 -is-merge
+```
+
+## Email
+
+```bash
+http://veryvp.com/Emailgo
+https://hunter.io/search/
+```
+
+## 网盘数据
+
+```bash
+https://www.lingfengyun.com/
+https://www.pansoso.com/
+http://wp.soshoulu.com/
+http://www.zhuzhupan.com/
+```
+
+## dork
+
+### education
+
+```bash
+# education
+filetype:xls site:xxx.edu.cn sfzh
+filetype:xls site:xxx.edu.cn 身份证号
+filetype:pdf site:xxx.edu.cn sfzh
+filetype:pdf site:edu.cn 身份证号
+inurl:edu inurl:PDF 机密等级 ABC
+inurl:/backup intitle:index of backup intext:*sql site:edu.cn
+inurl:/school/support site:edu.cn
+```
+
+### tools
+
+```bash
+# https://github.com/dwisiswant0/go-dork
+```
+
+### cheatsheet
+
+```bash
+# https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06
 ```

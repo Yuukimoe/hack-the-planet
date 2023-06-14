@@ -76,3 +76,15 @@ cat webs/httprobe_webs.txt | httpx -sc -fr -title -web-server -tech-detect -loca
 -json -o webs/httpx/httpx_webs.json -screenshot -srd webs/httpx_webs/
 ```
 
+## Fingerprint
+
+```bash
+# https://github.com/urbanadventurer/WhatWeb
+
+# https://github.com/zan8in/afrog
+
+# https://github.com/EdgeSecurityTeam/EHole
+
+
+```
+

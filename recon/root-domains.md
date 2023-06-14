@@ -1,4 +1,4 @@
-# Root Domain
+# Root domains
 
 ## ASN
 

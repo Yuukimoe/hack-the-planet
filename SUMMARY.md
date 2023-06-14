@@ -6,8 +6,8 @@
 
 * [Public info gathering](recon/public-info-gathering.md)
 * [Subdomain Enum](recon/subdomain-enum.md)
-* [Root domains](recon/root-domains.md)
 * [Webs Recon](recon/webs-recon.md)
+* [Root domains](recon/root-domains.md)
 
 ## 🐛 pentesting web
 
