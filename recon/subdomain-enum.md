@@ -4,58 +4,71 @@
 
 > _所有被动源的子域名枚举操作都建议在网络环境良好的情况下执行_
 
-<pre class="language-bash"><code class="lang-bash"><strong># Multiple sources
-</strong># https://github.com/OWASP/Amass
-amass enum -config ~/.config/amass/config.ini -d target.com | anew subs.txt | wc -l
-
-# https://github.com/tomnomnom/assetfinder
-# assetfinder 不配置 API 的情况下收集到的信息比较少
-assetfinder -subs-only target.com | anew subs.txt | wc -l
+```bash
+## Multiple sources
+# https://github.com/OWASP/Amass
+amass enum -d target.com -config ~/.config/amass/config.ini
+amass enum -df roots.txt -config ~/.config/amass/config.ini
 
 # https://github.com/shmilylty/OneForAll
 # 修改部分配置 https://gist.github.com/moeuuki/cb6fbabe868ffab3c84f5886f3957326
-python3 ~/tools/recon-tools/OneForAll/oneforall.py --target target.com --path subs.json run
-jq -r '.[].subdomain' subs.json | anew subs.txt | wc -l; rm subs.json
+python3 ~/Tools/ReconTools/OneForAlloneforall.py --target target.com --fmt json --path ./ run
+
+python3 ~/Tools/ReconTools/OneForAll/oneforall.py --targets roots.txt --fmt json --path ./ run
+cat all_subdomain_*.json | jq -r '.[].subdomain' | anew subs.txt | wc -l
+# rm all_subdomain_*.txt *.json
 
 # https://github.com/projectdiscovery/subfinder
 # subfinder 配置了所有的 API
-subfinder -all -silent -d target.com | anew subs.txt | wc -l
+subfinder -d target.com -all -silent | anew subs.txt | wc -l
+subfinder -dL subs.txt -all -silent | anew subs.txt | wc -l
 
-<strong># GitHub source
-</strong># https://github.com/gwen001/github-subdomains
-github-subdomains -q -raw -t ~/.config/github-subdomains/github_token.txt -d target.com | anew subs.txt | wc -l
+# https://github.com/tomnomnom/assetfinder
+# assetfinder 不配置 API 的情况下收集到的信息比较少
+assetfinder -subs-only example.com
+cat roots.txt| assetfinder -subs-only
 
-<strong># Certificate transparency
-</strong># https://certificate.transparency.dev/
+# https://github.com/lc/gau
+# https://github.com/tomnomnom/unfurl
+echo example.com | gau --subs | unfurl -u domains
+
+## GitHub source
+# https://github.com/gwen001/github-subdomains
+github-subdomains -d target.com -q -raw -t ~/.config/github-subdomains/github_token.txt | anew subs.txt | wc -l
+
+## Certificate transparency
+# https://certificate.transparency.dev/
 # https://crt.sh/
 # https://github.com/UnaPibaGeek/ctfr
-python3 ~/tools/recon-tools/ctfr/ctfr.py -d target.com | unfurl -u domains | anew subs.txt | wc -l
+python3 ctfr.py -d target.com | unfurl -u domains | anew subs.txt | wc -l
 
-<strong># Wayback Machine
-</strong># https://github.com/tomnomnom/waybackurls
+## Wayback Machine
+# https://github.com/tomnomnom/waybackurls
 # https://github.com/tomnomnom/unfurl
 echo target.com | waybackurls | unfurl -u domains | anew subs.txt | wc -l
-</code></pre>
+cat roots.txt | waybackurls | unfurl -u domains
+```
 
 ## Active
 
 ```bash
 # Generate resolvers lsits
 # https://github.com/vortexau/dnsvalidator
-dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o lists/resolvers.txt
+dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o resolvers.txt
 
 ## or
 # https://github.com/teknogeek/fresh.py
-python3 ~/tools/recon-tools/fresh.py/fresh.py --clean ~/tools/recon-tools/fresh.py/clean_regex.txt -o lists/resolvers.txt -j 200
-
-# BF
-# https://github.com/projectdiscovery/shuffledns
-shuffledns -d target.com -r lists/resolvers.txt -w lists/subdict.txt -silent | anew subs.txt | wc -l
-shuffledns -l roots.txt -r lists/resolvers.txt -w lists/subdict.txt -silent | anew subs.txt | wc -l
+python3 fresh.py -o resolvers.txt -j 200
 
 # Active DNS record
 # https://github.com/d3mondev/puredns
-puredns resolve subs.txt -r lists/resolvers.txt -w resolved.txt | wc -l
+puredns resolve subs.txt -r resolvers.txt -w resolved.txt
+
+# BF
+# https://github.com/projectdiscovery/shuffledns
+shuffledns -d target.com -r resolvers.txt -w subdict.txt -silent
+cat roots.txt | shuffledns -r resolvers.txt -w subdict.txt -silent
+
 ```
 
 ## Permutation
@@ -70,7 +83,7 @@ gotator -sub subs.txt -perm words.txt -depth 1 -numbers 10 -mindup -adv -md -sil
 altdns -i subs.txt -o out.txt -w words.txt -r -s results_output.txt
 ```
 
-## DNS records
+## DNS/IP
 
 ```bash
 # https://github.com/projectdiscovery/dnsx
@@ -98,10 +111,4 @@ https://github.com/moeuuki/Furry/tree/main/subdomain
 ```
 
 ## Other techniques
-
-```bash
-# https://github.com/lc/gau
-# https://github.com/tomnomnom/unfurl
-gau --subs example.com | unfurl -u domains
-```
 

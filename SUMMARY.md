@@ -5,12 +5,13 @@
 ## 🔭 recon
 
 * [Public info gathering](recon/public-info-gathering.md)
+* [Root domains](recon/root-domains.md)
 * [Subdomain Enum](recon/subdomain-enum.md)
 * [Webs Recon](recon/webs-recon.md)
-* [Root domains](recon/root-domains.md)
 
 ## 🐛 pentesting web
 
+* [Frontdesk pentest](pentesting-web/frontdesk-pentest.md)
 * [Web API Pentesting](pentesting-web/web-api-pentesting.md)
 * [SQL Injection](pentesting-web/sql-injection.md)
 * [Host collision](pentesting-web/host-collision.md)

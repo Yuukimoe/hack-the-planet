@@ -1,85 +1,68 @@
 # Public info gathering
 
-## 工商信息
-
-### 控股/子公司
-
-工商信息收集基本流程
-
-1. 企业官网寻找备案号 -> 通过备案号获取公司名称
-2. 工具/站点查询公司名称 -> 获取子公司、法人/股东信息、非 Web 资产 (APP/小程序/公众号)
-3. 对子公司重复执行第 2 步骤操作
+## OSINT websites
 
 ```bash
-# 企业基本信息
+# Multipurpose
+https://www.shodan.io/
+https://fofa.info/
+https://hunter.qianxin.com/
+
+# Companies info
 https://www.aiqicha.com/
-https://www.tianyancha.com/
-https://www.qcc.com/
 https://www.xiaolanben.com/pc/
-https://www.qixin.com/
 
-# APP 信息收集
-https://www.qimai.cn/
-https://tj.aldwx.com/
+https://opencorporates.com/companies
 
-# 小程序信息收集
-https://tj.aldwx.com/
-
-# ICP 备案查询
+# ICP
 https://beian.miit.gov.cn/#/Integrated/index
 https://www.beianx.cn/
-https://aiqicha.baidu.com/
 https://icp.chinaz.com/
+https://www.ggcx.com/main/record
+http://www.chaicp.com/
 
-# 公安备案查询
+# 公网备案
 https://www.beian.gov.cn/portal/registerSystemInfo
 https://icp.chinaz.com/psorgan
-```
 
-### 域名
+# APP
+https://www.xiaolanben.com/pc
+https://www.qimai.cn/
+https://www.apple.com/app-store
 
-```bash
-# Reverse ICP
-https://beian.miit.gov.cn/#/Integrated/index
-https://www.beianx.cn/
-https://www.aiqicha.com/
+# 小程序
+https://tj.aldwx.com/
 
-# Whois
-https://whois.chinaz.com/
-https://www.whoxy.com/
-
-# DNS zone transfer
-https://hackertarget.com/zone-transfer/
-```
-
-### 工具
-
-```bash
-# 企业信息收集
-# https://github.com/wgpsec/ENScan_GO
-enscan -n company -invest 50 -is-merge
-enscan -f subcompany.txt -invest 50 -is-merge
-```
-
-## Email
-
-```bash
-http://veryvp.com/Emailgo
-https://hunter.io/search/
-```
-
-## 网盘数据
-
-```bash
+# Cloud drive
 https://www.lingfengyun.com/
 https://www.pansoso.com/
 http://wp.soshoulu.com/
 http://www.zhuzhupan.com/
+
+# DNS zone transfer
+https://hackertarget.com/zone-transfer/
+
+# Ping tools
+https://www.itdog.cn/batch_ping/
 ```
 
-## dork
+### Companie tools
 
-### education
+```bash
+# https://github.com/wgpsec/ENScan_GO
+enscan -n company -invest 50 -email -is-merge -deep 2
+enscan -f subcompany.txt -invest 50 -email -is-merge -deep 2
+```
+
+## Whois/Registrant
+
+```bash
+https://www.whoxy.com/
+```
+
+## Dorks
+
+### Education
 
 ```bash
 # education
@@ -92,14 +75,8 @@ inurl:/backup intitle:index of backup intext:*sql site:edu.cn
 inurl:/school/support site:edu.cn
 ```
 
-### tools
+### Google
 
 ```bash
-# https://github.com/dwisiswant0/go-dork
-```
-
-### cheatsheet
-
-```bash
-# https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06
+https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06
 ```
