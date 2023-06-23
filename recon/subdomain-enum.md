@@ -55,6 +55,8 @@ cat roots.txt | waybackurls | unfurl -u domains
 # Generate resolvers lsits
 # https://github.com/vortexau/dnsvalidator
 dnsvalidator -tL https://public-dns.info/nameservers.txt -threads 200 -o resolvers.txt
+## cn
+dnsvalidator -tL https://public-dns.info/nameserver/cn.txt -threads 200 -o resolvers.txt
 
 ## or
 # https://github.com/teknogeek/fresh.py
@@ -63,11 +65,12 @@ python3 fresh.py -o resolvers.txt -j 200
 # Active DNS record
 # https://github.com/d3mondev/puredns
 puredns resolve subs.txt -r resolvers.txt -w resolved.txt
+puredns resolve subs.txt -r resolvers.txt --wildcard-batch 1000000 | anew subs.txt
 
 # BF
 # https://github.com/projectdiscovery/shuffledns
 shuffledns -d target.com -r resolvers.txt -w subdict.txt -silent
-cat roots.txt | shuffledns -r resolvers.txt -w subdict.txt -silent
+shuffledns -l roots.txt -r resolvers.txt -w subdict.txt -silent
 
 ```
 

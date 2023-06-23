@@ -7,42 +7,47 @@
 
 ## Resolution
 
-<pre class="language-bash"><code class="lang-bash"><strong>## Top 3000 ports (非常非常非常非常非常非常的慢)
-</strong># https://github.com/projectdiscovery/dnsx
+```bash
+# Top 3000 ports (非常非常非常非常非常非常的慢)
+# https://github.com/projectdiscovery/dnsx
 # https://github.com/projectdiscovery/httpx
 # https://github.com/pry0cc/tew
 dnsx -l resolved.txt -json -o dns.json | jq -r '.a?[]?'
 nmap -T4 -vv -iL ips.txt --top-ports 3000 -n --open -oX nmap.xml
 tew -x nmap.xml -dnsx dns.json —vhost | httpx -json -o http.json
 
-<strong>## Gerneral
-</strong>cat resolved.txt | httpx -fr -random-agent -sc -silent -retries 2 -title -web-server -tech-detect -location -no-color -json -o webs.json
 
-<strong>## Top 1000 ports
-</strong># https://github.com/projectdiscovery/naabu
+# Gerneral
+cat resolved.txt | httpx -fr -random-agent -sc -silent -retries 2 -title -web-server -tech-detect -location -no-color -json -o webs.json
+
+
+# Top 1000 ports
+# https://github.com/projectdiscovery/naabu
 # https://github.com/projectdiscovery/httpx
 # naabu ... 75.32s user 204.73s system 11% cpu 42:19.95 total (316 domains)
 # httpx ... 6.55s user 2.40s system 0% cpu 43:19.48 total (316 domains)
 cat resolved.txt | naabu -top-ports 1000 -silent \
 | httpx -fr -retries 3 -json -o webs.json
 
-## Filter URL (with status_code)
+# Filter URL (with status_code)
 cat webs.json | jq -r '.url' | anew webs.txt
 cat webs.json | jq -r '. | select(.status_code==200) | .url' | anew 200.txt
 cat webs.json | jq -r '. | select(.status_code==403) | .url' | anew 403.txt
 cat webs.json | jq -r '. | select(.status_code==404) | .url' | anew 404.txt
 
-## jq usage
+# jq usage
 # a[] 数组中包含 1.1 的结果和 a[] 数组中存在 2.2.2.2 的结果
 jq -r '. | select(.a[] | contains("1.1") or . == "2.2.2.2")'
 cat webs.json | jq -r '. | select(.a[] | contains("8.8.8.") or . == "1.1.1.1")'
-</code></pre>
+```
 
 ## CMS
 
 ```bash
 # https://github.com/EdgeSecurityTeam/EHole
 Ehole finger -l resolved.txt -o Ehole.xlsx
+
+# https://github.com/Goqi/Banli
 
 # https://github.com/Tuhinshubhra/CMSeeK
 
@@ -53,8 +58,6 @@ Ehole finger -l resolved.txt -o Ehole.xlsx
 # https://github.com/urbanadventurer/WhatWeb
 
 # https://github.com/zhzyker/dismap
-
-# https://github.com/Goqi/Banli
 
 # Online webtsites
 http://www.yunsee.cn
@@ -81,3 +84,19 @@ cat webs/httprobe_webs.txt | httpx -sc -fr -title -web-server -tech-detect -loca
 -json -o webs/httpx/httpx_webs.json -screenshot -srd webs/httpx_webs/
 ```
 
+## JavaScript
+
+```bash
+# JavaScript
+https://github.com/rtcatc/Packer-Fuzzer
+https://github.com/pingc0y/URLFinder
+https://github.com/Threezh1/JSFinder
+
+# Webpack and SourceMap
+https://github.com/davidkevork/reverse-sourcemap
+https://github.com/SunHuawei/SourceDetector
+https://github.com/Lz1y/SourceDetector-dist
+
+# 
+
+```
