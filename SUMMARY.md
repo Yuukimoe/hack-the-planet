@@ -1,6 +1,6 @@
 # Table of contents
 
-* [\~/yuuki/pentest-note](README.md)
+* [HACK THE PLANET](README.md)
 
 ## 🔭 recon
 
