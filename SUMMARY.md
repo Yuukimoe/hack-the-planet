@@ -1,23 +1,18 @@
 # Table of contents
 
-* [HACK THE PLANET](README.md)
-* [DIRECTORY STRUCTURE](directory-structure.md)
+* [/Users/yuuki/hack-the-planet](README.md)
 
-## Recon <a href="#01-recon" id="01-recon"></a>
+## Recon
 
-* [Public Info](01-recon/01-public-info.md)
-* [Root Domain](01-recon/02-root-domain.md)
-* [Subdomain](01-recon/03-subdomain.md)
-* [Website Recon](01-recon/04-website-recon.md)
+* [Public info gathering](recon/public-info-gathering.md)
+* [Root domains](recon/root-domains.md)
+* [Subdomain Enum](recon/subdomain-enum.md)
+* [Webs recon](recon/webs-recon.md)
 
 ## 📱 Mobile Pentesting
 
 * [Android](mobile-pentesting/android.md)
 * [小程序](mobile-pentesting/xiao-cheng-xu.md)
-
-## 🤩 Generic Methodology
-
-* [Proxy Pool](generic-methodology/proxy-pool.md)
 
 ## 🗄 resources
 
