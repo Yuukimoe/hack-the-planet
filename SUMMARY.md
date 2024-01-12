@@ -1,21 +1,14 @@
 # Table of contents
 
 * [HACK THE PLANET](README.md)
+* [DIRECTORY STRUCTURE](directory-structure.md)
 
-## 🔭 recon
+## Recon <a href="#01-recon" id="01-recon"></a>
 
-* [Public info gathering](recon/public-info-gathering.md)
-* [Root domains](recon/root-domains.md)
-* [Subdomain Enum](recon/subdomain-enum.md)
-* [Webs Recon](recon/webs-recon.md)
-
-## 🐛 pentesting web
-
-* [Frontdesk pentest](pentesting-web/frontdesk-pentest.md)
-* [Web API Pentesting](pentesting-web/web-api-pentesting.md)
-* [SQL Injection](pentesting-web/sql-injection.md)
-* [Host collision](pentesting-web/host-collision.md)
-* [Information Leakage](pentesting-web/information-leakage.md)
+* [Public Info](01-recon/01-public-info.md)
+* [Root Domain](01-recon/02-root-domain.md)
+* [Subdomain](01-recon/03-subdomain.md)
+* [Website Recon](01-recon/04-website-recon.md)
 
 ## 📱 Mobile Pentesting
 
