@@ -95,3 +95,14 @@ inurl:/school/support site:edu.cn
 ```bash
 https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06
 ```
+
+
+
+## All sources
+
+> 备选标题:
+>
+> 1. 所有的知识来源 -> All sources of knowledge
+> 2. 知识的来源 -> SourcesSources of knowledge
+
+* Usage: "The Web Application Hacker's Handbook" -> Chapter 11 -> "xxxxxxx"
